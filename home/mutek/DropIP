@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+for IP in $(cat IPLIST)
+do
+
+iptables -A INPUT -s $IP -j DROP
+
+wait
+
+printf .
+
+done
+
+echo ""

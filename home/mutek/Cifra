@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+robbe="$@"
+
+openssl aes-256-cbc -a -salt -in $robbe -out $robbe.enc
+
+
+# Decifra
+
+#openssl aes-256-cbc -d -a -in $robbe -out $robbe.dec

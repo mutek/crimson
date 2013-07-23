@@ -1,0 +1,32 @@
+ScriptAlias /cgi-bin/mailman/ /usr/lib/cgi-bin/mailman/
+Alias /pipermail/ /var/lib/mailman/archives/public/
+Alias /images/mailman/ /usr/share/images/mailman/
+<Directory /usr/lib/cgi-bin/mailman/>
+   AllowOverride None
+   Options ExecCGI
+   AddHandler cgi-script .cgi
+   Order allow,deny
+   Allow from all
+</Directory>
+<Directory /var/lib/mailman/archives/public/>
+   Options Indexes FollowSymlinks
+   AllowOverride None
+   Order allow,deny
+   Allow from all
+</Directory>
+<Directory /usr/share/images/mailman/>
+   AllowOverride None
+   Order allow,deny
+   Allow from all
+</Directory>
+<VirtualHost *:80>
+ServerName lists.server.com
+RedirectMatch ^/$ http://lists.server.com/cgi-bin/mailman/listinfo
+ErrorLog /var/log/apache2/lists-error.log
+CustomLog /var/log/apache2/lists-access.log combined
+<Directory /var/lib/mailman/archives/>
+    Options Indexes FollowSymLinks
+    AllowOverride None
+</Directory>
+#All other lines are commented out.
+</VirtualHost>

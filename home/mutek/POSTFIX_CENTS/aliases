@@ -1,0 +1,175 @@
+# See man 5 aliases for format
+postmaster:    root
+
+mutek: luca.cappelletti@gmail.com
+
+lynx:		lynX@hostmaster.per.votopirata.it
+hostmaster:	lynx
+webmaster:	lynx
+
+# probabilmente da convertire in redmine input, come anche info@
+ufficio-stampa:	stampa
+ufficio.stampa:	stampa
+ufficiostampa:	stampa
+ufficio:	stampa
+press:		stampa
+stampa:		alv,lynx,redstar.casilino23@gmail.com,lilo@rfc1925.net,info@lists.partito-pirata.it
+
+# info
+info-partito-pirata.it: info@lists.partito-pirata.it
+
+## lista pippo
+pippo:              "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman post pippo"
+pippo-admin:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman admin pippo"
+pippo-bounces:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman bounces pippo"
+pippo-confirm:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman confirm pippo"
+pippo-join:         "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman join pippo"
+pippo-leave:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman leave pippo"
+pippo-owner:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman owner pippo"
+pippo-request:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman request pippo"
+pippo-subscribe:    "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman subscribe pippo"
+pippo-unsubscribe:  "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman unsubscribe pippo"
+
+## lista mailman
+mailman:              "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman post mailman"
+mailman-admin:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman admin mailman"
+mailman-bounces:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman bounces mailman"
+mailman-confirm:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman confirm mailman"
+mailman-join:         "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman join mailman"
+mailman-leave:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman leave mailman"
+mailman-owner:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman owner mailman"
+mailman-request:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman request mailman"
+mailman-subscribe:    "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman subscribe mailman"
+mailman-unsubscribe:  "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman unsubscribe mailman"
+
+## lista annunci
+annunci:              "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman post annunci"
+annunci-admin:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman admin annunci"
+annunci-bounces:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman bounces annunci"
+annunci-confirm:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman confirm annunci"
+annunci-join:         "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman join annunci"
+annunci-leave:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman leave annunci"
+annunci-owner:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman owner annunci"
+annunci-request:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman request annunci"
+annunci-subscribe:    "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman subscribe annunci"
+annunci-unsubscribe:  "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman unsubscribe annunci"
+
+## lista updates
+updates:              "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman post updates"
+updates-admin:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman admin updates"
+updates-bounces:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman bounces updates"
+updates-confirm:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman confirm updates"
+updates-join:         "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman join updates"
+updates-leave:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman leave updates"
+updates-owner:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman owner updates"
+updates-request:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman request updates"
+updates-subscribe:    "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman subscribe updates"
+updates-unsubscribe:  "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman unsubscribe updates"
+
+## lista info
+info:              "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman post info"
+info-admin:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman admin info"
+info-bounces:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman bounces info"
+info-confirm:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman confirm info"
+info-join:         "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman join info"
+info-leave:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman leave info"
+info-owner:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman owner info"
+info-request:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman request info"
+info-subscribe:    "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman subscribe info"
+info-unsubscribe:  "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman unsubscribe info"
+
+## lista traduttori
+traduttori:              "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman post traduttori"
+traduttori-admin:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman admin traduttori"
+traduttori-bounces:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman bounces traduttori"
+traduttori-confirm:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman confirm traduttori"
+traduttori-join:         "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman join traduttori"
+traduttori-leave:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman leave traduttori"
+traduttori-owner:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman owner traduttori"
+traduttori-request:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman request traduttori"
+traduttori-subscribe:    "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman subscribe traduttori"
+traduttori-unsubscribe:  "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman unsubscribe traduttori"
+
+## lista certificatori
+certificatori:              "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman post certificatori"
+certificatori-admin:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman admin certificatori"
+certificatori-bounces:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman bounces certificatori"
+certificatori-confirm:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman confirm certificatori"
+certificatori-join:         "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman join certificatori"
+certificatori-leave:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman leave certificatori"
+certificatori-owner:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman owner certificatori"
+certificatori-request:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman request certificatori"
+certificatori-subscribe:    "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman subscribe certificatori"
+certificatori-unsubscribe:  "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman unsubscribe certificatori"
+
+## paperopoli mailing list
+paperopoli:              "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman post paperopoli"
+paperopoli-admin:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman admin paperopoli"
+paperopoli-bounces:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman bounces paperopoli"
+paperopoli-confirm:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman confirm paperopoli"
+paperopoli-join:         "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman join paperopoli"
+paperopoli-leave:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman leave paperopoli"
+paperopoli-owner:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman owner paperopoli"
+paperopoli-request:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman request paperopoli"
+paperopoli-subscribe:    "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman subscribe paperopoli"
+paperopoli-unsubscribe:  "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman unsubscribe paperopoli"
+
+## lista liquidemocracy
+liquidemocracy:              "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman post liquidemocracy"
+liquidemocracy-admin:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman admin liquidemocracy"
+liquidemocracy-bounces:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman bounces liquidemocracy"
+liquidemocracy-confirm:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman confirm liquidemocracy"
+liquidemocracy-join:         "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman join liquidemocracy"
+liquidemocracy-leave:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman leave liquidemocracy"
+liquidemocracy-owner:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman owner liquidemocracy"
+liquidemocracy-request:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman request liquidemocracy"
+liquidemocracy-subscribe:    "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman subscribe liquidemocracy"
+liquidemocracy-unsubscribe:  "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman unsubscribe liquidemocracy"
+
+## lista liquidtalk
+liquidtalk:              "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman post liquidtalk"
+liquidtalk-admin:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman admin liquidtalk"
+liquidtalk-bounces:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman bounces liquidtalk"
+liquidtalk-confirm:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman confirm liquidtalk"
+liquidtalk-join:         "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman join liquidtalk"
+liquidtalk-leave:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman leave liquidtalk"
+liquidtalk-owner:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman owner liquidtalk"
+liquidtalk-request:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman request liquidtalk"
+liquidtalk-subscribe:    "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman subscribe liquidtalk"
+liquidtalk-unsubscribe:  "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman unsubscribe liquidtalk"
+
+## lista open
+open:              "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman post open"
+open-admin:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman admin open"
+open-bounces:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman bounces open"
+open-confirm:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman confirm open"
+open-join:         "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman join open"
+open-leave:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman leave open"
+open-owner:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman owner open"
+open-request:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman request open"
+open-subscribe:    "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman subscribe open"
+open-unsubscribe:  "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman unsubscribe open"
+
+## lista arti
+arti:              "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman post arti"
+arti-admin:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman admin arti"
+arti-bounces:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman bounces arti"
+arti-confirm:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman confirm arti"
+arti-join:         "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman join arti"
+arti-leave:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman leave arti"
+arti-owner:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman owner arti"
+arti-request:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman request arti"
+arti-subscribe:    "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman subscribe arti"
+arti-unsubscribe:  "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman unsubscribe arti"
+
+## lista legale
+legale:              "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman post legale"
+legale-admin:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman admin legale"
+legale-bounces:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman bounces legale"
+legale-confirm:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman confirm legale"
+legale-join:         "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman join legale"
+legale-leave:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman leave legale"
+legale-owner:        "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman owner legale"
+legale-request:      "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman request legale"
+legale-subscribe:    "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman subscribe legale"
+legale-unsubscribe:  "|/opt/Mailman/Mailman2.1.13-Debian6/Linux-amd64/mail/mailman unsubscribe legale"

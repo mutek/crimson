@@ -1,0 +1,247 @@
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+
+#
+# Ogni volta che aggiungi non ti dimenticare di:
+# - flusha il fw con: iptables -F
+# - sourcia rc.locale ricarica tutto
+# - verifica le tabelle con: iptabes -L
+#
+# permetti massimo una connessione ssh ogni 10 secondi cosi quello di fastweb sattacca r cazzo e fai login
+iptables -A INPUT -i venet0:0 -p tcp --dport 22 -m state --state NEW -m recent --set --name SSH
+iptables -A INPUT -i venet0:0 -p tcp --dport 22 -m state --state NEW -m recent --update --seconds 60 --hitcount 6 --rttl --name SSH -j DROP
+
+# forza il controllo sul SYN per nuovi pacchetti, altrimenti droppa (evita il syn flooding)
+iptables -A INPUT -p tcp ! --syn -m state --state NEW -j DROP
+
+# droppa pacchetti frammentati in ingresso
+iptables -A INPUT -f -j DROP
+
+# droppa pacchetti malformi XMAS in ingresso
+iptables -A INPUT -p tcp --tcp-flags ALL ALL -j DROP
+
+# droppa pacchetti malformi NULL in ingresso
+iptables -A INPUT -p tcp --tcp-flags ALL NONE -j DROP
+
+# droppa richieste di ping (richieste ICMP echo)
+iptables -I INPUT -p icmp --icmp-type echo-request -j DROP
+
+
+# filtra esplicitamente IP di attaccanti
+iptables -A INPUT -s 74.208.70.60 -j DROP
+iptables -A INPUT -s 188.127.227.58 -j DROP
+iptables -A INPUT -s 95.211.137.144 -j DROP
+iptables -A INPUT -s 75.112.151.19 -j DROP
+iptables -A INPUT -s 114.251.37.26 -j DROP
+iptables -A INPUT -s 62.77.234.69 -j DROP
+iptables -A INPUT -s 174.137.148.183 -j DROP
+
+# flooda molto aggressivo DDoS circa 10/sec per porta a prima del limitatore temporale
+# controlla meglio ed eventualmente fornisci i dati alla polizia postale
+# scarrella vocabolari a gogo
+# 93-63-92-83.ip27.fastwebnet.it
+iptables -A INPUT -s 93.63.92.83 -j DROP
+
+
+iptables -A INPUT -s 91.205.189.27 -j DROP
+iptables -A INPUT -s 190.115.0.34 -j DROP
+iptables -A INPUT -s 189.1.162.182 -j DROP
+
+# molto aggressivo
+iptables -A INPUT -s 122.70.187.42 -j DROP
+
+
+iptables -A INPUT -s 114.134.75.211 -j DROP
+iptables -A INPUT -s 122.55.19.116 -j DROP
+iptables -A INPUT -s 193.87.169.162 -j DROP
+iptables -A INPUT -s 91.205.189.15 -j DROP
+iptables -A INPUT -s 122.194.113.155 -j DROP
+iptables -A INPUT -s 184.72.52.2 -j DROP
+iptables -A INPUT -s 101.78.134.166 -j DROP
+iptables -A INPUT -s 88.190.216.186 -j DROP
+iptables -A INPUT -s 78.129.227.211 -j DROP
+iptables -A INPUT -s 92.240.68.152 -j DROP
+iptables -A INPUT -s 58.211.82.238 -j DROP
+iptables -A INPUT -s 91.223.82.211 -j DROP
+iptables -A INPUT -s 64.253.208.126 -j DROP
+iptables -A INPUT -s 124.205.9.1 -j DROP
+iptables -A INPUT -s 221.174.50.150 -j DROP
+iptables -A INPUT -s 188.121.60.225 -j DROP
+iptables -A INPUT -s 74.63.249.42 -j DROP
+iptables -A INPUT -s 61.234.53.6 -j DROP
+iptables -A INPUT -s 220.182.51.11 -j DROP
+iptables -A INPUT -s 212.5.48.25 -j DROP
+iptables -A INPUT -s 74.120.137.195 -j DROP
+iptables -A INPUT -s 108.77.36.138 -j DROP
+iptables -A INPUT -s 211.232.114.100 -j DROP
+iptables -A INPUT -s 84.42.3.54 -j DROP
+iptables -A INPUT -s 184.22.105.194 -j DROP
+iptables -A INPUT -s 94.189.128.172 -j DROP
+iptables -A INPUT -s 120.88.9.10 -j DROP
+iptables -A INPUT -s 222.75.164.221 -j DROP
+iptables -A INPUT -s 208.115.207.173 -j DROP
+iptables -A INPUT -s 182.79.254.29 -j DROP
+iptables -A INPUT -s 201.90.74.81 -j DROP
+iptables -A INPUT -s 119.161.145.206 -j DROP
+iptables -A INPUT -s 213.243.116.99 -j DROP
+iptables -A INPUT -s 31.193.0.237 -j DROP
+iptables -A INPUT -s 111.67.210.19 -j DROP
+iptables -A INPUT -s 88.208.229.205 -j DROP
+iptables -A INPUT -s 91.219.238.72 -j DROP
+iptables -A INPUT -s 70.87.117.36 -j DROP
+iptables -A INPUT -s 220.170.15.67 -j DROP
+iptables -A INPUT -s 220.227.255.248 -j DROP
+iptables -A INPUT -s 117.211.123.226 -j DROP
+iptables -A INPUT -s 213.165.68.114 -j DROP
+iptables -A INPUT -s 207.155.197.42 -j DROP
+iptables -A INPUT -s 83.149.125.111 -j DROP
+iptables -A INPUT -s 178.162.176.84 -j DROP
+iptables -A INPUT -s 177.117.57.128 -j DROP
+iptables -A INPUT -s 68.71.38.90 -j DROP
+iptables -A INPUT -s 219.148.116.154 -j DROP
+iptables -A INPUT -s 201.95.124.112 -j DROP
+iptables -A INPUT -s 61.168.229.156 -j DROP
+iptables -A INPUT -s 121.124.127.178 -j DROP
+iptables -A INPUT -s 209.142.0.120 -j DROP
+iptables -A INPUT -s 60.191.44.218 -j DROP
+iptables -A INPUT -s 199.15.114.18 -j DROP
+iptables -A INPUT -s 188.64.175.100 -j DROP
+iptables -A INPUT -s 183.60.143.25 -j DROP
+iptables -A INPUT -s 64.115.226.76 -j DROP
+iptables -A INPUT -s 95.48.81.99 -j DROP
+iptables -A INPUT -s 91.150.169.3 -j DROP
+iptables -A INPUT -s 184.106.205.54 -j DROP
+iptables -A INPUT -s 182.155.1.17 -j DROP
+iptables -A INPUT -s 93.93.14.10 -j DROP
+iptables -A INPUT -s 219.143.13.65 -j DROP
+iptables -A INPUT -s 202.204.112.13 -j DROP
+iptables -A INPUT -s 218.205.222.45 -j DROP
+iptables -A INPUT -s 124.124.107.133 -j DROP
+iptables -A INPUT -s 182.50.0.237 -j DROP
+iptables -A INPUT -s 87.230.27.90 -j DROP
+iptables -A INPUT -s 119.80.39.56 -j DROP
+iptables -A INPUT -s 182.50.0.237 -j DROP
+iptables -A INPUT -s 124.124.107.133 -j DROP
+iptables -A INPUT -s 69.10.143.102 -j DROP
+iptables -A INPUT -s 210.51.48.94 -j DROP
+iptables -A INPUT -s 108.15.99.40 -j DROP
+iptables -A INPUT -s 61.167.199.239 -j DROP
+iptables -A INPUT -s 64.62.190.160 -j DROP
+iptables -A INPUT -s 199.83.91.99 -j DROP
+iptables -A INPUT -s 58.22.116.232 -j DROP
+iptables -A INPUT -s 80.45.169.178 -j DROP
+iptables -A INPUT -s 200.55.134.4 -j DROP
+iptables -A INPUT -s 210.75.18.38 -j DROP
+iptables -A INPUT -s 114.32.181.102 -j DROP
+iptables -A INPUT -s 88.191.143.160 -j DROP
+iptables -A INPUT -s 203.238.178.182 -j DROP
+iptables -A INPUT -s 46.20.5.117 -j DROP
+iptables -A INPUT -s 70.39.94.152 -j DROP
+iptables -A INPUT -s 220.194.47.84 -j DROP
+iptables -A INPUT -s 88.190.223.187 -j DROP
+iptables -A INPUT -s 116.255.167.129 -j DROP
+iptables -A INPUT -s 27.54.120.3 -j DROP
+iptables -A INPUT -s 213.165.68.49 -j DROP
+iptables -A INPUT -s 41.130.193.41 -j DROP
+iptables -A INPUT -s 203.38.49.138 -j DROP
+iptables -A INPUT -s 222.237.78.139 -j DROP
+iptables -A INPUT -s 190.145.24.147 -j DROP
+iptables -A INPUT -s 178.18.242.30 -j DROP
+iptables -A INPUT -s 77.95.228.81 -j DROP
+iptables -A INPUT -s 89.222.129.104 -j DROP
+iptables -A INPUT -s 200.91.25.173 -j DROP
+iptables -A INPUT -s 113.83.227.129 -j DROP
+iptables -A INPUT -s 1.58.56.82 -j DROP
+iptables -A INPUT -s 200.85.225.138 -j DROP
+iptables -A INPUT -s 78.36.232.214 -j DROP
+iptables -A INPUT -s 93.63.201.220 -j DROP
+iptables -A INPUT -s 83.16.235.109 -j DROP
+iptables -A INPUT -s 188.138.84.113 -j DROP
+iptables -A INPUT -s 88.191.101.56 -j DROP
+iptables -A INPUT -s 60.250.38.36 -j DROP
+iptables -A INPUT -s 95.9.49.173 -j DROP
+iptables -A INPUT -s 60.28.245.73 -j DROP
+iptables -A INPUT -s 112.220.106.35 -j DROP
+iptables -A INPUT -s 123.215.30.134 -j DROP
+iptables -A INPUT -s 85.92.176.1 -j DROP
+iptables -A INPUT -s 61.155.128.32 -j DROP
+iptables -A INPUT -s 141.108.253.35 -j DROP
+iptables -A INPUT -s 66.35.89.2 -j DROP
+iptables -A INPUT -s 113.108.237.70 -j DROP
+iptables -A INPUT -s 85.18.140.45 -j DROP
+iptables -A INPUT -s 121.127.231.246 -j DROP
+iptables -A INPUT -s 85.92.175.249 -j DROP
+iptables -A INPUT -s 186.66.14.190 -j DROP
+iptables -A INPUT -s 83.170.93.206 -j DROP
+iptables -A INPUT -s 89.44.111.21 -j DROP
+iptables -A INPUT -s 111.74.81.189 -j DROP
+iptables -A INPUT -s 217.15.122.158 -j DROP
+iptables -A INPUT -s 110.234.23.12 -j DROP
+iptables -A INPUT -s 124.205.252.158 -j DROP
+iptables -A INPUT -s 93.157.46.93 -j DROP
+iptables -A INPUT -s 85.92.175.249 -j DROP
+iptables -A INPUT -s 186.66.14.190 -j DROP
+iptables -A INPUT -s 83.170.93.206 -j DROP
+iptables -A INPUT -s 89.44.111.21 -j DROP
+iptables -A INPUT -s 111.74.81.189 -j DROP
+iptables -A INPUT -s 121.127.231.246 -j DROP
+iptables -A INPUT -s 82.61.147.83 -j DROP
+iptables -A INPUT -s 110.234.23.12 -j DROP
+iptables -A INPUT -s 217.15.122.158 -j DROP
+iptables -A INPUT -s 61.183.11.243 -j DROP
+iptables -A INPUT -s 119.188.7.138 -j DROP
+iptables -A INPUT -s 176.53.57.148 -j DROP
+iptables -A INPUT -s 107.0.30.244 -j DROP
+iptables -A INPUT -s 218.241.86.68 -j DROP
+iptables -A INPUT -s 111.4.115.138 -j DROP
+iptables -A INPUT -s 218.241.86.68 -j DROP
+iptables -A INPUT -s 196.38.40.35 -j DROP
+iptables -A INPUT -s 124.205.252.158 -j DROP
+iptables -A INPUT -s 125.88.76.42 -j DROP
+iptables -A INPUT -s 174.122.222.50 -j DROP
+iptables -A INPUT -s 115.238.55.166 -j DROP
+iptables -A INPUT -s 111.11.181.29 -j DROP
+iptables -A INPUT -s 111.207.237.151 -j DROP
+iptables -A INPUT -s 122.70.144.206 -j DROP
+iptables -A INPUT -s 69.27.151.3 -j DROP
+iptables -A INPUT -s 212.174.82.215 -j DROP
+iptables -A INPUT -s 184.154.199.134 -j DROP
+iptables -A INPUT -s 122.170.97.176 -j DROP
+iptables -A INPUT -s 91.93.35.68 -j DROP
+iptables -A INPUT -s 65.111.166.27 -j DROP
+iptables -A INPUT -s 118.32.152.251 -j DROP
+iptables -A INPUT -s 188.255.110.238 -j DROP
+iptables -A INPUT -s 78.188.30.7 -j DROP
+iptables -A INPUT -s 188.255.110.238 -j DROP
+iptables -A INPUT -s 118.97.8.28 -j DROP
+iptables -A INPUT -s 222.80.184.54 -j DROP
+iptables -A INPUT -s 202.28.209.13 -j DROP
+iptables -A INPUT -s 78.129.201.6 -j DROP
+iptables -A INPUT -s 190.247.109.41 -j DROP
+iptables -A INPUT -s 201.3.130.178 -j DROP
+iptables -A INPUT -s 221.174.50.141 -j DROP
+iptables -A INPUT -s 208.115.236.121 -j DROP
+iptables -A INPUT -s 190.167.228.51 -j DROP
+iptables -A INPUT -s 51.228.167.190 -j DROP
+iptables -A INPUT -s 78.110.167.210 -j DROP
+iptables -A INPUT -s 75.125.63.2 -j DROP
+iptables -A INPUT -s 211.233.11.101 -j DROP
+iptables -A INPUT -s 212.138.86.41 -j DROP
+iptables -A INPUT -s 200.113.185.227 -j DROP
+iptables -A INPUT -s 61.50.249.151 -j DROP
+iptables -A INPUT -s 202.109.211.113 -j DROP
+iptables -A INPUT -s 173.31.82.86 -j DROP
+# se usato in /etc/ direttamente allora decommentare altrimenti lasciare commentato
+#exit 0
+
+. /home/mutek/DropIP

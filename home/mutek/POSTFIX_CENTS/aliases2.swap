@@ -1,0 +1,20 @@
+# See man 5 aliases for format
+postmaster:    root
+clamav: root
+
+info-partito-pirata.it: info.partitopirata.it@gmail.com, info@lists.partito-pirata.it
+#info-partito-pirata.it: info.partitopirata.it@gmail.com
+
+##ufficio-stampa-partito-pirata.it: info.partitopirata.it@gmail.com, info@lists.partito-pirata.it
+
+ufficio-stampa: info@lists.partito-pirata.it, info.partitopirata.it@gmail.com, redstar.casilino23@gmail.com, lilo@rfc1925.net, mutek@inventati.org, luca.cappelletti@gmail.com
+#ufficio-stampa-partito-pirata.it: mutek@inventati.org, info.partitopirata.it@gmail.com
+ufficio.stampa: ufficio-stampa
+ufficiostampa:  ufficio-stampa
+ufficio:        ufficio-stampa
+press:          ufficio-stampa
+stampa:         ufficio-stampa
+
+form: info@lists.partito-pirata.it, info.partitopirata.it@gmail.com
+
+hostmaster-partito-pirata.it: lynX@pirates.are.psyced.org
