@@ -1,0 +1,45 @@
+#!/usr/bin/env sh
+
+From="mutek@partito-pirata.it"
+To="mutek@riseup.net"
+
+rm header.mail body.mail mail.mail
+wait
+
+echo "From: "$From > header.mail
+echo "To: "$To >> header.mail
+wait
+
+while true
+do
+
+rm mail.mail body.mail
+wait
+
+cat header.mail > mail.mail
+wait
+
+DATA=$(date +%d/%m/%y" "%H:%M:%S)
+wait
+
+Subject="Subject: test loop data: "$DATA
+wait
+echo $Subject >> mail.mail
+wait
+
+echo $DATA > body.mail
+wait
+
+cat body.mail >> mail.mail
+wait
+
+(sendmail -f $From -F $From -t < mail.mail)
+
+# debug
+#cat body.mail
+
+# ogni 3 minuti
+sleep 180
+
+
+done

@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+#
+# Luca Cappelletti 2013
+#
+# GNU/GPL
+#
+
+PHP_BIN="/usr/bin/php"
+CHECK_MAIL="/srv/mantis/plugins/EmailReporting/scripts/bug_report_mail.php"
+
+
+while true
+do
+
+$PHP_BIN $CHECK_MAIL
+
+# ogni 3 minuti
+sleep 180
+
+
+done
