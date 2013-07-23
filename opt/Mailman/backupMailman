@@ -1,0 +1,27 @@
+#!/usr/bin/env sh
+#
+# backupMailman
+#
+# (c) CopyLeft Luca Cappelletti 2013
+#
+# GNU/GPL
+#
+#
+
+CARTELLA=$1
+
+[ -z $CARTELLA ] && echo "Utilizzo: $0 PATH_CARTELLA_DA_ARCHIVIARE" && exit 1
+
+DATA="$(date +%s"."%N)"
+
+NOMEFILE="BACKUP-MAILMAN-"$DATA
+
+echo "backup Mailman in "$NOMEFILE"..."
+
+wait
+
+tar -czvf $NOMEFILE.tar.gz $CARTELLA || echo "Errore" && exit 1
+
+echo ""
+echo "backup completo!"
+echo ""

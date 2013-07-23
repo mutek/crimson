@@ -1,0 +1,46 @@
+#!/usr/bin/env sh
+#
+# backupListMembers
+#
+# (c) CopyLeft Luca Cappelletti 2012-2013
+#
+# GNU/GPL
+#
+#
+
+DATA="$(date +%s"."%N)"
+
+FOLDER="BACKUP-"$DATA
+
+echo "backup liste in "$FOLDER"..."
+
+mkdir -p $FOLDER
+
+for i in $(list_lists -b | sort -u)
+do
+
+    list_members $i > $FOLDER/$i
+
+    printf .
+
+    wait
+
+    cat $FOLDER/$i >> $FOLDER/BROADCAST.$FOLDER.tmp
+
+    printf .
+
+    wait
+
+done
+
+wait
+
+cat $FOLDER/BROADCAST.$FOLDER.tmp | sort -u > $FOLDER/BROADCAST.list
+
+wait
+
+rm $FOLDER/BROADCAST.$FOLDER.tmp
+
+echo ""
+echo "backup completo!"
+echo ""
