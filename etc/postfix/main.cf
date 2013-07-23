@@ -1,0 +1,93 @@
+# Network/Connections
+##myhostname = euve5459.server4you.net
+#myhostname = crimson.dyne.org
+#myhostname = lists.partito-pirata.it
+#myhostname = crimson.partito-pirata.it
+mydomain = partito-pirata.it
+#myorigin = partito-pirata.it
+myorigin = /etc/mailname
+#myorigin = $mydomain
+mydestination = $mydomain, localhost.$mydomain, localhost.localdomain, localhost, votopirata.it, lists.partito-pirata.it, partito-pirata.it, mail.partito-pirata.it, euroliquid.org, crimson.votopirata.it, tokens.partito-pirata.it
+relayhost = 
+mynetworks = 127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128, 62.75.147.82/32
+inet_interfaces = all
+#default_destination_concurrency_limit = 2
+
+# Databases
+alias_maps = hash:/etc/aliases
+alias_database = hash:/etc/aliases
+
+#### added by mutek
+#virtual_alias_domains = partito-pirata.it lists.partito-pirata.it crimson.dyne.org mail.partito-pirata.it ml.partito-pirata.it euroliquid.org
+virtual_alias_domains = mail.partito-pirata.it ml.partito-pirata.it euroliquid.org, votopirata.it, tokens.partito-pirata.it
+virtual_alias_maps = hash:/etc/postfix/virtual
+append_at_my_origin = yes
+append_dot_my_domain = yes
+####
+
+
+# SASL / SMTP authentication
+#smtpd_sasl_auth_enable = yes
+#smtpd_sasl_authenticated_header = yes
+#smtpd_sasl_local_domain = 
+#smtpd_sasl_path = private/auth
+#smtpd_sasl_type = dovecot
+#broken_sasl_auth_clients = yes
+
+# TLS parameters
+smtpd_tls_cert_file=/etc/ssl/certs/postfix.pem
+smtpd_tls_key_file=/etc/ssl/private/postfix.key
+smtpd_use_tls=yes
+smtpd_tls_session_cache_database = btree:${data_directory}/smtpd_scache
+smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
+
+# Security/Relay
+#smtpd_delay_reject = yes
+#smtpd_helo_restrictions = reject_invalid_hostname
+#smtpd_sender_restrictions = reject_unknown_address
+#smtpd_recipient_restrictions = permit_mynetworks, permit_sasl_authenticated, reject_unauth_destination
+
+# Mailbox/Message
+home_mailbox = Maildir/
+mailbox_command = procmail -a "$EXTENSION"
+mailbox_size_limit = 0
+message_size_limit = 20480000
+unknown_local_recipient_reject_code = 550
+recipient_delimiter = +
+
+# misc
+biff = no
+allow_percent_hack = no
+append_at_myorigin = no
+append_dot_mydomain = no
+swap_bangpath = no
+readme_directory = no
+
+# ----------------------------------------------------------------
+# mutek tuning
+# dopo quanti secondi attivo il trigger di delay soft e hard
+smtpd_error_sleep_time = 2s
+default_destination_rate_delay = 2s
+default_destination_concurrency_limit = 1
+smtpd_delay_reject = yes
+
+# se non ti presenti con un HELO arrivederci e grazie
+smtpd_helo_required = yes
+
+# occhio per occhio dente per dente...se non risolvi in un nome ti saluto
+smtpd_helo_restrictions = permit_mynetworks, reject_non_fqdn_hostname, reject_invalid_hostname, permit
+smtpd_sender_restrictions = permit_sasl_authenticated, permit_mynetworks, reject_non_fqdn_sender, reject_unknown_sender_domain, permit
+smtpd_recipient_restrictions = reject_unauth_pipelining, reject_non_fqdn_recipient, reject_unknown_recipient_domain, permit_mynetworks, permit_sasl_authenticated, reject_unauth_destination, permit
+
+#
+#smtpd_recipient_restrictions = reject_unauth_pipelining, reject_non_fqdn_recipient, reject_unknown_recipient_domain, permit_mynetworks, permit_sasl_authenticated, reject_unauth_destination, reject_rbl_client sbl-xbl.spamhaus.org, reject_rbl_client cbl.abuseat.org, reject_rbl_client bl.spamcop.net, permit
+#default_destination_recipient_limit=10
+#default_process_limit=10
+#smtp_mx_session_limit=10
+#smtpd_client_connection_count_limit=10
+#smtp_destination_concurrency_limit=10
+#maximal_backoff_time = 1000s
+#minimal_backoff_time = 300s
+
+# banner ti bannor
+smtpd_banner = Partito Pirata Italiano

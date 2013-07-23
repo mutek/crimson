@@ -1,0 +1,23 @@
+# mutek: sgama tokens virtual di test poi rigirare direttamente ai configuratori eventualmente carica una mailbox locale di emergenza a titolo di backup se i configuratori dovessero avere problemi
+#@tokens.partito-pirata.it retoken,mutek@riseup.net
+@tokens.partito-pirata.it retoken,mutek@riseup.net,looris@gmail.com,alv@dyne.org,subaddiction@subaddiction.net,alessandro.ciofini@gmail.com,henomis@gmail.com
+
+# INFO per Milano
+info-milano@partito-pirata.it info@partitopiratamilano.org
+
+# gestione trick stampa
+stampa@lists.partito-pirata.it ml-stampa
+stampa@partito-pirata.it stampa
+
+# Roma
+roma@partito-pirata.it info@partito-pirata.it,romapirata@jojoche.net 
+roma@lists.partito-pirata.it ml-roma
+
+# @crimson.partito-pirata.it
+@crimson.partito-pirata.it PLEASE_DO_NOT_USE_CRIMSON_AS_FINAL_DESTINATION
+
+# Latina
+latina@partito-pirata.it mutek@riseup.net
+latinapirata@partito-pirata.it mutek@riseup.net
+piratilatina@partito-pirata.it mutek@riseup.net
+partitopiratalatina@partito-pirata.it mutek@riseup.net
